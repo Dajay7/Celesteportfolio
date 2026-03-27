@@ -96,7 +96,7 @@ export default function App() {
             className="text-2xl font-bold tracking-tighter"
             whileHover={{ scale: 1.05 }}
           >
-            ALEX TURNER
+            JEAN-JACQUES CELESTE
           </motion.div>
           
           <button
@@ -425,7 +425,7 @@ export default function App() {
           
           <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
             <motion.a
-              href="mailto:alex@creative.studio"
+              href="mailto:jeanjacques@creative.studio"
               className="px-12 py-6 bg-black text-white text-xl font-bold tracking-wider hover:bg-pink-600 transition-colors"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -456,7 +456,7 @@ export default function App() {
       {/* Footer */}
       <footer className="bg-black text-white py-12 px-4 md:px-12">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="text-2xl font-bold tracking-tighter">ALEX TURNER</div>
+          <div className="text-2xl font-bold tracking-tighter">JEAN-JACQUES CELESTE</div>
           <div className="text-sm tracking-wider text-gray-400">
             © 2026 ALL RIGHTS RESERVED
           </div>
