@@ -1,0 +1,6 @@
+node_modules/
+dist/
+claude-code-local/
+
+.DS_Store
+*.local
