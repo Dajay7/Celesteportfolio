@@ -12,6 +12,21 @@ import {
 import { motion } from "motion/react";
 import { useState } from "react";
 import type { ReactNode } from "react";
+import aboutVisual from "../assets/homepage/about-visual.jpg";
+import clientBnp from "../assets/client-logos/bnp-paribas.png";
+import clientCarrefour from "../assets/client-logos/carrefour.png";
+import clientCarrousel from "../assets/client-logos/carrousel-du-louvre.png";
+import clientChange from "../assets/client-logos/change.png";
+import clientElite from "../assets/client-logos/elite-model-look.png";
+import clientEuroRscg from "../assets/client-logos/euro-rscg.png";
+import clientLacoste from "../assets/client-logos/lacoste.png";
+import clientMitsubishi from "../assets/client-logos/mitsubishi-electric.png";
+import clientNumericable from "../assets/client-logos/numericable.png";
+import clientSante from "../assets/client-logos/sante-magazine.png";
+import clientUnibail from "../assets/client-logos/unibail.png";
+import heroBackground from "../assets/homepage/hero-background.jpg";
+import logoMark from "../assets/homepage/logo.png";
+import portfolioVisual from "../assets/homepage/portfolio-visual.jpg";
 
 const services = [
   {
@@ -34,15 +49,17 @@ const services = [
 ];
 
 const references = [
-  "Lacoste",
-  "change_",
-  "elite",
-  "BNP Paribas",
-  "Carrefour",
-  "Unibail",
-  "Le Carrousel",
-  "sante magazine",
-  "Mitsubishi Electric",
+  { src: clientLacoste, alt: "Lacoste" },
+  { src: clientChange, alt: "change_" },
+  { src: clientElite, alt: "Elite Model Look" },
+  { src: clientBnp, alt: "BNP Paribas" },
+  { src: clientCarrefour, alt: "Carrefour" },
+  { src: clientUnibail, alt: "Unibail-Rodamco-Westfield" },
+  { src: clientCarrousel, alt: "Carrousel du Louvre" },
+  { src: clientSante, alt: "Sante Magazine" },
+  { src: clientMitsubishi, alt: "Mitsubishi Electric" },
+  { src: clientNumericable, alt: "Numericable" },
+  { src: clientEuroRscg, alt: "Euro RSCG" },
 ];
 
 const navItems = ["Home", "Portfolio", "About", "Contact"];
@@ -52,14 +69,9 @@ function Logo() {
     <a
       href="#home"
       aria-label="Jean-Jacques Celeste home"
-      className="grid h-12 w-8 place-items-center border-2 border-[#65ff24] text-[#65ff24] shadow-[0_0_18px_rgba(101,255,36,0.45)]"
+      className="block h-[46px] w-[31px] drop-shadow-[0_0_14px_rgba(101,255,36,0.55)]"
     >
-      <span className="relative h-8 w-5">
-        <span className="absolute left-1/2 top-0 h-4 w-4 -translate-x-1/2 rounded-full border-2 border-current" />
-        <span className="absolute left-1/2 top-4 h-4 w-0.5 -translate-x-1/2 bg-current" />
-        <span className="absolute bottom-0 left-0 h-0.5 w-full bg-current" />
-        <span className="absolute bottom-2 left-0 h-0.5 w-2 bg-current" />
-      </span>
+      <img src={logoMark} alt="" className="h-full w-full object-contain" />
     </a>
   );
 }
@@ -94,8 +106,7 @@ export default function App() {
         id="home"
         className="relative min-h-[880px] bg-cover bg-center"
         style={{
-          backgroundImage:
-            "linear-gradient(90deg, rgba(30, 0, 56, 0.96) 0%, rgba(52, 5, 92, 0.7) 43%, rgba(37, 8, 89, 0.38) 100%), url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=2200&q=85')",
+          backgroundImage: `linear-gradient(90deg, rgba(30, 0, 56, 0.96) 0%, rgba(52, 5, 92, 0.6) 42%, rgba(37, 8, 89, 0.28) 100%), url(${heroBackground})`,
         }}
       >
         <header className="fixed left-0 right-0 top-0 z-40 bg-[#2b0b58]/92 shadow-[0_10px_28px_rgba(9,0,24,0.45)] backdrop-blur">
@@ -209,7 +220,12 @@ export default function App() {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-x-9 gap-y-4 text-lg font-black text-white/35 grayscale">
             {references.map((reference) => (
-              <span key={reference}>{reference}</span>
+              <img
+                key={reference.alt}
+                src={reference.src}
+                alt={reference.alt}
+                className="max-h-9 max-w-[132px] object-contain opacity-35 grayscale mix-blend-screen"
+              />
             ))}
           </div>
         </div>
@@ -228,9 +244,9 @@ export default function App() {
           >
             <div className="absolute inset-6 rounded-[2rem] bg-violet-200/20 blur-3xl" />
             <img
-              src="https://images.unsplash.com/photo-1587614382346-4ec70e388b28?auto=format&fit=crop&w=950&q=80"
+              src={portfolioVisual}
               alt="Creative desk illustration"
-              className="relative h-full w-full rounded-[2rem] object-cover opacity-70 mix-blend-screen saturate-50"
+              className="relative h-full w-full object-contain opacity-70 mix-blend-luminosity saturate-50"
             />
           </motion.div>
 
@@ -295,9 +311,9 @@ export default function App() {
           >
             <div className="absolute inset-8 rounded-full bg-violet-100/15 blur-3xl" />
             <img
-              src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&fit=crop&w=850&q=80"
+              src={aboutVisual}
               alt="Designer working with digital devices"
-              className="relative aspect-[4/3] w-full rounded-2xl object-cover opacity-60 mix-blend-screen saturate-50"
+              className="relative aspect-[4/3] w-full object-contain opacity-65 mix-blend-luminosity saturate-50"
             />
           </motion.div>
         </div>
